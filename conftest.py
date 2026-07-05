@@ -15,3 +15,6 @@ def users_data():
         "username": "USRNAME",
         "email":"User@mail.com"
     }
+
+def pytest_html_report_title(report):
+    report.title="API JSONPLACEHOLDER - POST"
