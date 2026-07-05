@@ -1,5 +1,3 @@
-import pytest
-
 from pages.post_api_page import PostsApi
 from utils.logger import logger
 import pytest_check as check
@@ -57,5 +55,14 @@ def test_create_post(posts_data):
         response.status_code,
         201,
         "NO SE CREO EL POST"
+    )
+
+def test_delete_post():
+    logger.info("BORRANDO UN POST")
+    response= api.delete_post(3)
+    check.equal(
+        response.status_code,
+        200,
+        "NO SE BORRO EL POST"
     )
 

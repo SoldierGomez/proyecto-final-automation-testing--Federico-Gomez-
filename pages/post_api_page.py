@@ -1,7 +1,7 @@
 import requests
 
 class PostsApi:
-    URL_BASE= "git "
+    URL_BASE= "https://jsonplaceholder.typicode.com/"
     API_KEY=""
 
     def get_one_post(self,post_id):
@@ -26,4 +26,8 @@ class PostsApi:
         return requests.post(
             f"{self.URL_BASE}/posts",
             json=data
+        )
+    def delete_post(self,post_id):
+        return requests.delete(
+            f"{self.URL_BASE}/posts/{post_id}"
         )
